@@ -13,5 +13,9 @@ it('correctly increments the counter', () => {
     const wrapper = shallow(<CounterButton color={mockColor} />)
 
     wrapper.find('[id="counter"]').simulate('click')
-    expect(wrapper.state()).toEqual({ count: 1})
+    wrapper.find('[id="counter"]').simulate('click')
+    expect(wrapper.state()).toEqual({ count: 2})
+    wrapper.find('[id="counter"]').simulate('click')
+    wrapper.find('[id="counter"]').simulate('click')
+    expect(wrapper.state()).toEqual({ count: 4}) 
 })
